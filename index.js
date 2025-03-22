@@ -1,8 +1,12 @@
-//Os
-const os =  require('os')
- console.log("Free Memory" , os.freemem())
+import express from "express"
+import cors from "cors"
+import router from "./routes/UserRoutes.js"
 
- //Segitiga 
+const app = express()
+app.use(cors())
+app.use(express.json())
+app.use(router)
 
-const luasSegitiga = require('./segitiga')
- console.log(luasSegitiga(3,4))
+app.listen(3000, ()=>{
+    console.log("server is running on port 3000")
+})
