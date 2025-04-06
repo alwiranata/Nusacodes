@@ -1,5 +1,5 @@
 import db from "../config/database.js";
-import  { DataTypes} from "sequelize";
+import  {DataTypes} from "sequelize";
 
 const User = db.define("user", {
     name:DataTypes.STRING,
