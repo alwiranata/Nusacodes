@@ -12,7 +12,7 @@ const Product = db.define("products",{
     image : DataTypes.STRING,
     qty:DataTypes.INTEGER,
     price :DataTypes.INTEGER,
-    description : DataTypes.INTEGER,
+    description : DataTypes.STRING,
     inventory_id:DataTypes.INTEGER
 },{
     freezeTableName :true,
