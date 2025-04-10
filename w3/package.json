@@ -19,7 +19,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "api" : "nodemon index.js",
+    "api": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

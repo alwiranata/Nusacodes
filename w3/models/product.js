@@ -1,5 +1,5 @@
 import db from "../config/database.js"; 
-import { DataTypes, INTEGER } from "sequelize";
+import { DataTypes} from "sequelize";
 import Inventory from "./inventory.js";
 
 const Product = db.define("products",{
