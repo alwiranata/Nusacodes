@@ -4,11 +4,11 @@ export const verifyToken = (req,res ,next) =>{
     const authHeader = req.headers.authorization
     const token = authHeader?.split(" ")[1]
 
-    if(!token) return res.status.status(401).json({
+    if(!token) return res.status(401).json({
         msg : "No token provided"
     })
 
-    jwt.verify(token, "rahasiaSuperAman", (err ,user) =>{
+    jwt.verify(token, "rahasiaSuperUser", (err ,user) =>{
         if(err) return res.status(403).json({
             msg :"Token Invalid"
         })

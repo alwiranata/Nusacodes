@@ -3,8 +3,8 @@ import db from "../config/database.js"
 import Product from "./product.js";
 
 const Cart = db.define("carts",{
-    email :{
-        type :DataTypes.STRING,
+    email:{
+        type:DataTypes.STRING,
         allowNull :false
     },
     product_id :{
@@ -14,8 +14,11 @@ const Cart = db.define("carts",{
     qty :{
         type :DataTypes.INTEGER,
         allowNull : false
+    },
+    price :{
+        type :DataTypes.INTEGER,
+        allowNull :false
     }
-    
 },{
     freezeTableName : true,
     timestamps : false
