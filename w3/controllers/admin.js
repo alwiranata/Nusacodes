@@ -1,4 +1,4 @@
-import User from "../models/user.js";
+import User from "../models/auth.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
@@ -18,7 +18,7 @@ export const  register = async (req, res) =>{
             })
         }
 
-       
+    
         const hashPassword = await bcrypt.hash(password, 10)
         await User.create({
             name,
@@ -58,7 +58,7 @@ export const login  = async (req,res) =>{
 
         const token = jwt.sign(
             {id :user.id ,role : user.role},
-            "rahsasiaSuperAman",
+            "rahasiaSuperAman",
             {expiresIn :"1d"}
         )
         res.status(200).json({

@@ -6,9 +6,11 @@ import {
     updateInventory,
     deleteInventory
 } from "../controllers/inventory.js"
+import { verifyToken } from "../middleware/adminMiddleware.js"
 
 const inventoryRouter = express.Router()
 
+inventoryRouter.use(verifyToken)
 inventoryRouter.get("/", getAllInventorys)
 inventoryRouter.get("/:id", getInventoryById)
 inventoryRouter.post("/", createInventory)

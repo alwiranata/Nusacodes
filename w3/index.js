@@ -3,9 +3,12 @@ import cors from "cors";
 import dotenv from "dotenv";
 
 import db from "./config/database.js";
-import authRouter from './routes/auth.js';
+import admin from './routes/admin.js';
+import user from './routes/user.js';
 import inventoryRouter from './routes/inventory.js';
 import productRouter from './routes/product.js';
+import cartRouter from './routes/cart.js';
+import invoiceRouter from './routes/invoice.js';
 
 dotenv.config(); // untuk .env
 
@@ -24,9 +27,13 @@ try {
 }
 
 // Routes
-app.use("/auth", authRouter); // Register, Login, Logout
+app.use("/admin", admin); // Register, Login, Logout
 app.use("/inventory", inventoryRouter); // hanya bisa diakses oleh admin
 app.use("/product", productRouter); // hanya bisa diakses oleh admin
+app.use("/user", user)
+app.use("/cart", cartRouter);
+app.use("/invoice", invoiceRouter);
+
 
 // Test endpoint
 app.get("/", (req, res) => {

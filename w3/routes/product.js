@@ -6,10 +6,11 @@ import {
     updateProduct,
     deleteProduct
 } from "../controllers/product.js"
-   
+import { verifyToken }  from "../middleware/adminMiddleware.js"  
 
 const productRouter = express.Router()
 
+productRouter.use(verifyToken)
 productRouter.get("/", getAllProducts)
 productRouter.get("/:id", getProductById)
 productRouter.post("/", createProduct)
